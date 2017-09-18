@@ -1,9 +1,9 @@
 $(document).ready(function(){
   console.log("welcome");
   //set options for slider
-  var speed = 460;
+  var speed = 450;
   var autoswitch = true;    
-  var autoswitchSpeed = 2640;
+  var autoswitchSpeed = 2000;
 
   //add active class
   $('.carousel-img').first().addClass('active');
@@ -16,9 +16,7 @@ $(document).ready(function(){
   $('#prev').on('click', goForwards);
 
     if(autoswitch === true){
-    setInterval(function(){
-      goForwards();
-    }, autoswitchSpeed)
+    setInterval(goForwards, autoswitchSpeed)
   }
 
 
@@ -45,5 +43,5 @@ $(document).ready(function(){
     $('.carousel-img').fadeOut(speed, 'linear');
     $('.active').fadeIn(speed, 'linear');
   }
-  
+
 });
