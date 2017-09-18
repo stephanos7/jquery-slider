@@ -4,7 +4,7 @@ $(document).ready(function(){
   var speed = 500;
   var autoswitch = false;    
   var autoswitchSpeed = 2500;
-
+  
   //add active class
   $('.carousel-img').first().addClass('active');
   //hide all other slides
@@ -18,7 +18,6 @@ $(document).ready(function(){
     if(autoswitch === true){
     setInterval(goForwards, autoswitchSpeed)
   }
-
 
   function goBackwards(){
     $('.active').removeClass('active').addClass('lastActive');
