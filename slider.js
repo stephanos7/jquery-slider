@@ -1,9 +1,9 @@
 $(document).ready(function(){
   console.log("welcome");
   //set options for slider
-  var speed = 300;
+  var speed = 460;
   var autoswitch = true;    
-  var autoswitchSpeed = 2000;
+  var autoswitchSpeed = 2640;
 
   //add active class
   $('.carousel-img').first().addClass('active');
@@ -12,7 +12,17 @@ $(document).ready(function(){
   //show first slide
   $('.active').show();
   //go forwards
-  $('#next').on('click', function(){
+  $('#next').on('click', goBackwards); 
+  $('#prev').on('click', goForwards);
+
+    if(autoswitch === true){
+    setInterval(function(){
+      goForwards();
+    }, autoswitchSpeed)
+  }
+
+
+  function goBackwards(){
     $('.active').removeClass('active').addClass('lastActive');
     if($('.lastActive').is(':last-child')){
       $('.carousel-img').first().addClass('active');
@@ -22,8 +32,9 @@ $(document).ready(function(){
     $('.lastActive').removeClass('lastActive');
     $('.carousel-img').fadeOut(speed, 'linear');
     $('.active').fadeIn(speed, 'linear');
-  })
-    $('#prev').on('click', function(){
+  }
+
+  function goForwards(){
     $('.active').removeClass('active').addClass('lastActive');
     if($('.lastActive').is(':first-child')){
       $('.carousel-img').last().addClass('active');
@@ -33,5 +44,6 @@ $(document).ready(function(){
     $('.lastActive').removeClass('lastActive');
     $('.carousel-img').fadeOut(speed, 'linear');
     $('.active').fadeIn(speed, 'linear');
-  })
+  }
+  
 });
