@@ -20,7 +20,7 @@ $(document).ready(function(){
       $('.lastActive').next().addClass('active');
     }
     $('.lastActive').removeClass('lastActive');
-    $('.carousel-img').fadeOut(speed);
-    $('.active').fadeIn(speed);
+    $('.carousel-img').fadeOut(speed, 'linear');
+    $('.active').fadeIn(speed, 'linear');
   })
 });
