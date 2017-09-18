@@ -23,4 +23,15 @@ $(document).ready(function(){
     $('.carousel-img').fadeOut(speed, 'linear');
     $('.active').fadeIn(speed, 'linear');
   })
+    $('#prev').on('click', function(){
+    $('.active').removeClass('active').addClass('lastActive');
+    if($('.lastActive').is(':first-child')){
+      $('.carousel-img').last().addClass('active');
+    }else{
+      $('.lastActive').prev().addClass('active');
+    }
+    $('.lastActive').removeClass('lastActive');
+    $('.carousel-img').fadeOut(speed, 'linear');
+    $('.active').fadeIn(speed, 'linear');
+  })
 });
