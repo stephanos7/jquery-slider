@@ -1,9 +1,9 @@
 $(document).ready(function(){
   console.log("welcome");
   //set options for slider
-  var speed = 450;
-  var autoswitch = true;    
-  var autoswitchSpeed = 2000;
+  var speed = 500;
+  var autoswitch = false;    
+  var autoswitchSpeed = 2500;
 
   //add active class
   $('.carousel-img').first().addClass('active');
