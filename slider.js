@@ -1,5 +1,4 @@
 $(document).ready(function(){
-  console.log("welcome");
   //set options for slider
   var speed = 500;
   var autoswitch = false;    
@@ -12,13 +11,12 @@ $(document).ready(function(){
   //show first slide
   $('.active').show();
   //go forwards
-  $('#next').on('click', goBackwards); 
-  $('#prev').on('click', goForwards);
+  $('#next').bind('touchstart mousedown', goBackwards); 
+  $('#prev').bind('touchstart moudedown', goForwards);
 
-    if(autoswitch === true){
+  if(autoswitch === true){
     setInterval(goForwards, autoswitchSpeed)
   }
-
   function goBackwards(){
     $('.active').removeClass('active').addClass('lastActive');
     if($('.lastActive').is(':last-child')){
@@ -30,7 +28,6 @@ $(document).ready(function(){
     $('.carousel-img').fadeOut(speed, 'linear');
     $('.active').fadeIn(speed, 'linear');
   }
-
   function goForwards(){
     $('.active').removeClass('active').addClass('lastActive');
     if($('.lastActive').is(':first-child')){
