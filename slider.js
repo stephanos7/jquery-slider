@@ -11,8 +11,8 @@ $(document).ready(function(){
   //show first slide
   $('.active').show();
   //go forwards
-  $('#next').on('click', goBackwards); 
-  $('#prev').on('click', goForwards);
+  $('#next').on('mouseup', goBackwards); 
+  $('#prev').on('mouseup', goForwards);
 
   if(autoswitch === true){
     setInterval(goForwards, autoswitchSpeed)
